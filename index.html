@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre la imagen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#151923">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Descubre la imagen</h1>
+
+        <div class="zona-imagenes">
+            <label for="selectorImagen" class="boton">
+                Elegir imagen
+            </label>
+
+            <label for="selectorCarpeta" class="boton boton-carpeta">
+                Elegir carpeta
+            </label>
+        </div>
+
+        <input type="file" id="selectorImagen" accept="image/*">
+
+        <input
+            type="file"
+            id="selectorCarpeta"
+            accept="image/*"
+            webkitdirectory
+            directory
+            multiple
+        >
+
+        <p id="nombreCarpeta"></p>
+
+        <div id="tablero" class="tablero"></div>
+
+        <section class="zona-operacion">
+            <p id="mensaje">Elige una imagen o una carpeta.</p>
+
+            <h2 id="operacion">---</h2>
+
+            <input
+                type="number"
+                id="respuesta"
+                placeholder="Tu respuesta"
+                inputmode="numeric"
+            >
+
+            <button id="comprobar">Comprobar</button>
+
+            <button id="nuevoJuego" class="secundario">
+                Nuevo juego
+            </button>
+
+            <label class="opcion-aleatoria">
+                <input type="checkbox" id="modoAleatorio">
+                Cuadro aleatorio
+            </label>
+        </section>
+
+        <p id="progreso">Cuadros descubiertos: 0/25</p>
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js")
+                    .catch(error => {
+                        console.error(
+                            "Error al registrar Descubre la imagen:",
+                            error
+                        );
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

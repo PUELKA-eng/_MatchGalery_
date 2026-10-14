@@ -1,0 +1,22 @@
+
+{
+  "id": "./",
+  "name": "MatchGalery",
+  "short_name": "MatchGalery",
+  "description": "Descubre imágenes resolviendo operaciones matemáticas.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1769d2",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
